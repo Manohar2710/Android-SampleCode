@@ -1,0 +1,2 @@
+rootProject.name = "Andvance Android Course"
+include ':app'
