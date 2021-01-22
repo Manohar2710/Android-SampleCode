@@ -1,0 +1,62 @@
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.appscrip.livedatacoroutines"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+	dataBinding {
+		enabled = true
+	}
+}
+
+dependencies {
+	implementation deps.app_compat
+	implementation deps.material
+	implementation deps.core_ktx
+	implementation deps.lifecycle.runtime
+	implementation deps.lifecycle.viewmodel_ktx
+	implementation deps.lifecycle.livedata_ktx
+	implementation deps.activity.activity_ktx
+
+	implementation deps.kotlin.stdlib
+	implementation deps.constraint_layout
+
+	testImplementation deps.junit
+	testImplementation deps.arch_core.testing
+
+	androidTestImplementation deps.atsl.runner
+	androidTestImplementation deps.atsl.rules
+	androidTestImplementation deps.atsl.ext_junit
+	androidTestImplementation deps.espresso.core
+	androidTestImplementation deps.espresso.contrib
+	androidTestImplementation deps.arch_core.testing
+
+	testImplementation deps.coroutines.test
+}
