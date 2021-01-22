@@ -49,7 +49,7 @@
 
     ```
 
-#### **To Set Up Notification **
+#### **To Set Up Notification**
 
 * Step 1) Add Below Dependency in app level build.gradle file.  
 
