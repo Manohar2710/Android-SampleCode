@@ -8,6 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.CountDownTimer
 import android.os.SystemClock
+import android.util.Log
 import androidx.core.app.AlarmManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.*
@@ -16,6 +17,7 @@ import com.appscrip.andvanceandroid.utils.cancelNotifications
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import com.appscrip.andvanceandroid.R
 
 class EggTimerViewModel(private val app: Application): AndroidViewModel(app) {
 	private val REQUEST_CODE = 0
@@ -44,6 +46,7 @@ class EggTimerViewModel(private val app: Application): AndroidViewModel(app) {
 	private val _elapsedTime = MutableLiveData<Long>()
 	val elapsedTime: LiveData<Long>
 		get() = _elapsedTime
+
 	private val _timeSelection = MutableLiveData<Int>()
 	val timeSelection: LiveData<Int>
 		get() = _timeSelection
@@ -63,7 +66,7 @@ class EggTimerViewModel(private val app: Application): AndroidViewModel(app) {
 			PendingIntent.FLAG_UPDATE_CURRENT
 		)
 
-		timerLengthOptions = app.resources.getIntArray(R.array.minutes_array)
+		timerLengthOptions = app.resources.getIntArray(R.array.egg_array)
 
 		//If alarm is not null, resume the timer back for this alarm
 		if (_alarmOn.value!!) {
@@ -73,6 +76,7 @@ class EggTimerViewModel(private val app: Application): AndroidViewModel(app) {
 	}
 
 	fun setAlarm(isChecked: Boolean) {
+		Log.i("setAlarm",isChecked.toString())
 		when (isChecked) {
 			true -> timeSelection.value?.let { startTimer(it) }
 			false -> cancelNotification()
