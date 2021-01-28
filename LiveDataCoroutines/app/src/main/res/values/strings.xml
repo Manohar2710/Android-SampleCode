@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">LiveData Coroutines</string>
+	<string name="app_name">LiveData Coroutines</string>
+	<string name="perform_single_network_request_on_background_thread">Load recent Android Versions</string>
 </resources>
