@@ -62,4 +62,12 @@ dependencies {
 	androidTestImplementation deps.arch_core.testing
 
 	testImplementation deps.coroutines.test
+	androidTestImplementation deps.arch_core.testing
+
+//	network libraries
+	implementation deps.retrofit.runtime
+	implementation deps.retrofit.retrofit2_gson
+	implementation deps.retrofit.retrofit2_adapter
+	implementation deps.retrofit.gson
+	implementation deps.okhttp_logging_interceptor
 }
