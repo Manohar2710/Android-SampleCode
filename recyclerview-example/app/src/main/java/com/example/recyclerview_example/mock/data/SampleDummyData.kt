@@ -18,61 +18,25 @@ package com.example.recyclerview_example.mock.data
 
 import com.example.recyclerview_example.model.SampleData
 
-val SAMPLE_DUMMY_DATA = arrayListOf( SampleData(
-    name = "Madrid",
-),
-
+val SAMPLE_DUMMY_DATA = arrayListOf(
     SampleData(
-    name = "Naples",
-
-),
-
-    SampleData(
-    name = "Dallas",
+    id = 1,
+    name = "Books & Stationery",
+    iconUrl = "",
+    shape = "square"
 
 ),
 
     SampleData(
-    name = "Cordoba",
+    id = 2,
+    name = "Bicycles & Accessories",
+    iconUrl = "",
+    shape = "rect"
 ),
 
     SampleData(
-    name = "Maldivas",
-),
-
-    SampleData(
-    name = "Aspen",
-),
-
-    SampleData(
-    name = "Bali",
-),
-
-    SampleData(
-    name = "Big Sur",
-),
-
-    SampleData(
-    name = "Khumbu Valley",
-
-),
-
-    SampleData(
-    name = "Rome",
-),
-
-    SampleData(
-    name = "Granada",
-),
-
-    SampleData(
-    name = "Washington DC",
-),
-
-    SampleData(
-    name = "Barcelona",
-),
-
-    SampleData(
-    name = "Crete"
+    id = 3,
+    name = "Car Accessories",
+    iconUrl = "",
+    shape = "rect"
 ))

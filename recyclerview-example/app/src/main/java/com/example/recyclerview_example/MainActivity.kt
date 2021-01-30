@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         rvSampleData = findViewById(R.id.rv_sample_data)
         sampleDataAdapter = SampleAdapter(sampleDataList)
         rvSampleData.adapter = sampleDataAdapter
-        val linearLayoutManager = LinearLayoutManager(this)
+        val linearLayoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         rvSampleData.layoutManager = linearLayoutManager
         rvSampleData.hasFixedSize()
         sampleDataList.addAll( SAMPLE_DUMMY_DATA)
